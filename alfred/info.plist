@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.vero.gettingstarted.keywords</string>
+	<key>connections</key>
+	<dict>
+		<key>656AF8C8-8AFD-49D4-A298-2E2C9A83D737</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1E8F7282-92F7-4E50-8F38-763B1173C88B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vero Pepperrell</string>
+	<key>description</key>
+	<string>Learn how to connect a keyword to different actions and outputs</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ipinfo</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1E8F7282-92F7-4E50-8F38-763B1173C88B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ipinfo</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>getting ipinfo</string>
+				<key>script</key>
+				<string>query=$1
+
+if [ -z $1 ] 
+then
+
+./ipinfo  get_local|/usr/bin/python3 ./main.py
+
+else
+
+./ipinfo get_ipinfo --ip $1|/usr/bin/python3 ./main.py
+
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Ipinfo</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>656AF8C8-8AFD-49D4-A298-2E2C9A83D737</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Keywords are one of Alfred's most commonly used and most useful ways of launching actions. Set a keyword and connect it to the action(s) you want to perform.
+
+Type your keyword into Alfred, followed by your input text if needed, and you'll be on your way to boosting your productivity!</string>
+	<key>uidata</key>
+	<dict>
+		<key>1E8F7282-92F7-4E50-8F38-763B1173C88B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>260</integer>
+		</dict>
+		<key>656AF8C8-8AFD-49D4-A298-2E2C9A83D737</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>265</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>https://www.alfredapp.com</string>
+</dict>
+</plist>

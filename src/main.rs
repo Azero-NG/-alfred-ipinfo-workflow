@@ -1,6 +1,14 @@
 extern crate clap;
 mod ipinfo;
 use clap::{Arg, Command};
+use std::net::IpAddr;
+
+pub fn ip_valid(o: &str) -> Result<(), String> {
+    match o.parse::<IpAddr>() {
+        Ok(..) => Ok(()),
+        Err(e) => Err(format!("{}", e)),
+    }
+}
 
 #[tokio::main]
 async fn main() {
@@ -12,6 +20,7 @@ async fn main() {
                 .short('p')
                 .long("ip")
                 .required(true)
+                .validator(ip_valid)
                 .value_name("ip"),
         );
 
