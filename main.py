@@ -5,6 +5,6 @@ items = []
 for k in ipinfo:
     items.append({
         "title": "%s:%s"%(k,ipinfo[k]),
-        # "argv":ipinfo[k],
+        "arg":ipinfo[k],
     })
 print(json.dumps({"items": items}))
